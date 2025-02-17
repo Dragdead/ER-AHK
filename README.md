@@ -20,4 +20,4 @@ Current ER-related issues with the actual K&M setup inlude but not limited to :
   - Sort (T?)
   - Open Help Menu (? or Right click)
   - Two-hand weapon (E + Left click/Right click)
-The main consequence of these conflicts is that hardswapping is impossible, added annoyances include cancelling any interaction with a menu (NPC/Main Menu) when moving left and 
+The main consequence of these conflicts is that hardswapping is impossible, added annoyances include cancelling any interaction with a menu (NPC/Main Menu)
