@@ -1,7 +1,7 @@
 # ER-AHK-shenanigans
 Probably not going to work
 
-The singular goal of this AFK script is to make Elden Ring playable on Keyboard & Mouse on a WASD layout without conflicting keybinds
+The singular goal of this AHK script is to make Elden Ring playable on Keyboard & Mouse on a WASD layout without conflicting keybinds
 
 Current ER-related issues with the actual K&M setup inlude but not limited to :
 - RR1s being near impossible to do due to the lack of interval between running attacks (RR2)
