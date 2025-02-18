@@ -7,7 +7,6 @@
 ; Rebinds Esc to the forward mouse button like in Ds3
 #IfWinActive ahk_exe eldenring.exe
 XButton2::Send, {Esc}
-#IfWinActive
 
 ; Should block game's conflicting actions but keep movement, should also work whilst running and crouching 
 $*w::SendInput, {w Down}
