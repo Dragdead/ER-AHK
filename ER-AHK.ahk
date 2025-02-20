@@ -4,9 +4,9 @@
 ;-----                                                             -----;
 ;-----------------------------------------------------------------------;
 
-;---------------------------------------------------------------
-;Rebinds Esc to the forward mouse button like in Ds3: FUNCTIONAL
-;---------------------------------------------------------------
+;---------------------------------------------------
+;Rebinds Esc to the forward mouse button like in Ds3
+;---------------------------------------------------
 
 #IfWinActive ahk_exe eldenring.exe
 $*Xbutton2::
@@ -14,12 +14,11 @@ $*Xbutton2::
     Sleep, 50
     SendInput, {Esc Up}
     Sleep 10
-    menuOpen := !menuOpen
 Return
 
-;---------------------------------------------------
-;Rebinds N to Y for the simple inventory: FUNCTIONAL
-;---------------------------------------------------
+;---------------------------------------
+;Rebinds N to Y for the simple inventory
+;---------------------------------------
 
 $*n::
     SendInput, {y Down}
@@ -28,25 +27,27 @@ $*n::
     Sleep, 50
 Return
 
-;-----------------------------------------------------------------------------------------
-;Cancel interactions Backspace/Q: FUNCTIONAL (does not solve the conflict with "A" though)
-;-----------------------------------------------------------------------------------------
+$*y::Return
+
+;------------------------
+;Cancel interactions A/Q
+;------------------------
 
 $*q::
-    SendInput, {Backspace Down}
+    SendInput, {a Down}
     Sleep, 25
-    SendInput, {Backspace Up}
+    SendInput, {a Up}
 Return
 
-;------------------------------------------------------------------------------------------------------------------
-;Should block game's conflicting actions but keep movement, should also work whilst running and crouching: UNKNOWN
-;------------------------------------------------------------------------------------------------------------------
+;-----------------------------------------------------------
+;Rebinds WASD into ZQSD whilst keeping WASD as movement keys
+;-----------------------------------------------------------
 
-$*w::SendInput, {w Down}
-$*w Up::SendInput, {w Up}
+$*w::SendInput, {z Down}
+$*w Up::SendInput, {z Up}
 
-$*a::SendInput, {a Down}
-$*a Up::SendInput, {a Up}
+$*a::SendInput, {q Down}
+$*a Up::SendInput, {q Up}
 
 $*s::SendInput, {s Down}
 $*s Up::SendInput, {s Up}
@@ -54,9 +55,11 @@ $*s Up::SendInput, {s Up}
 $*d::SendInput, {d Down}
 $*d Up::SendInput, {d Up}
 
-;-----------------------------------
-;Two Handing like in Ds3: FUNCTIONAL
-;-----------------------------------
+$*z::Return
+
+;-----------------------
+;Two Handing like in Ds3
+;-----------------------
 
 $*Alt::
     SendInput, {e Down}
@@ -66,6 +69,31 @@ $*Alt::
     SendInput, {LButton Up}
     Sleep, 20
     SendInput, {e Up}
+Return
+
+;Experimental RR1 & RR2 script
+
+;$*XButton1::
+;if (GetKeyState("LShift", "P")) {  
+;    SendInput, {RButton Down}
+;    Sleep, 50
+;   SendInput, {Blind}{LShift Up} 
+;    Sleep, 5  
+;    SendInput, {LButton Down}
+;    Sleep, 50 
+;    SendInput, {LButton Up}
+;    Sleep, 10  
+;    SendInput, {RButton Up}
+;    Sleep 10
+;}
+;Return
+
+;---------
+;Debugging
+;---------
+
+F1::
+MsgBox, Menu State: %menuOpen%
 Return
 
 #IfWinActive
