@@ -17,7 +17,7 @@ Return
 $*Q::
 If (menuOpen)
 {
-    SendInput, {A}  ; If menu is open, Q acts as Cancel (A)
+    SendInput, {A} 
 }
 Return
 
