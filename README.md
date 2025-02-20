@@ -14,7 +14,7 @@ Current ER-related issues with the actual K&M setup include but not limited to :
   - Switch tab (Left/Right) (W/E) <--- Conflict with movement keys
   - Function 1 (R)
   - Function 2 (F)
-  - Function 3 (Y) <--- Ideally should be (N) 
+  - Function 3 (Y)
   - Scroll (Up/Down) (C/V)
   - Window Scroll (Up/Down) (Mouse Weel Up/Down) 
   - Sort (T)
