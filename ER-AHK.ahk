@@ -46,13 +46,13 @@ $*d Up::SendInput, {d Up}
 ; Two Handing like in Ds3: FUNCTIONAL
 
 $*Alt::
-    SendInput, {e Down}      ; Hold E
-    Sleep, 50                ; Small delay
-    SendInput, {LButton Down} ; Hold Left Click
-    Sleep, 100               ; Keep Left Click held (adjust as needed)
-    SendInput, {LButton Up}  ; Release Left Click
-    Sleep, 20               ; Keep E held a bit longer
-    SendInput, {e Up}        ; Release E
+    SendInput, {e Down}
+    Sleep, 50
+    SendInput, {LButton Down}
+    Sleep, 100
+    SendInput, {LButton Up}
+    Sleep, 20
+    SendInput, {e Up}
 Return
 
 #IfWinActive
