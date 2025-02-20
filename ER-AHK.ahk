@@ -4,24 +4,32 @@
 ;-----                                                             -----;
 ;-----------------------------------------------------------------------;
 
-; Rebinds Esc to the forward mouse button like in Ds3
+;Rebinds Esc to the forward mouse button like in Ds3: BROKEN
 
 #IfWinActive ahk_exe eldenring.exe
-$*XButton2::
+$*Xbutton2::
     SendInput, {Esc}
     menuOpen := !menuOpen
 Return
 
-;Cancel interactions A/Q
+;Rebinds N to Y for the simple inventory: FUNCTIONAL
+$*n::
+    SendInput, {y Down}
+    Sleep, 50
+    SendInput, {y Up}
+    Sleep, 50
+Return
 
-$*Q::
+;Cancel interactions A/Q: BROKEN
+
+$*q::
 If (menuOpen)
 {
-    SendInput, {A} 
+    SendInput, {a} 
 }
 Return
 
-; Should block game's conflicting actions but keep movement, should also work whilst running and crouching
+; Should block game's conflicting actions but keep movement, should also work whilst running and crouching: UNKNOWN
 
 $*w::SendInput, {w Down}
 $*w Up::SendInput, {w Up}
@@ -35,14 +43,16 @@ $*s Up::SendInput, {s Up}
 $*d::SendInput, {d Down}
 $*d Up::SendInput, {d Up}
 
-; TH
+; Two Handing like in Ds3: FUNCTIONAL
 
 $*Alt::
-SendInput, {e Down}  
-Sleep, 50            ; tweak input delay
-SendInput, {LButton} 
-Sleep, 50            ; tweak input delay
-SendInput, {e Up}    
+    SendInput, {e Down}      ; Hold E
+    Sleep, 50                ; Small delay
+    SendInput, {LButton Down} ; Hold Left Click
+    Sleep, 100               ; Keep Left Click held (adjust as needed)
+    SendInput, {LButton Up}  ; Release Left Click
+    Sleep, 20               ; Keep E held a bit longer
+    SendInput, {e Up}        ; Release E
 Return
 
 #IfWinActive
