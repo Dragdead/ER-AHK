@@ -11,9 +11,8 @@
 #IfWinActive ahk_exe eldenring.exe
 $*Xbutton2::
     SendInput, {Esc Down}
-    Sleep, 50
+    Sleep, 25
     SendInput, {Esc Up}
-    Sleep 10
 Return
 
 ;---------------------------------------
@@ -22,9 +21,8 @@ Return
 
 $*n::
     SendInput, {y Down}
-    Sleep, 50
+    Sleep, 25
     SendInput, {y Up}
-    Sleep, 50
 Return
 
 $*y::Return
@@ -65,28 +63,27 @@ $*Alt::
     SendInput, {e Down}
     Sleep, 50
     SendInput, {LButton Down}
-    Sleep, 100
+    Sleep, 20
     SendInput, {LButton Up}
     Sleep, 20
     SendInput, {e Up}
 Return
 
-;Experimental RR1 & RR2 script
+;----------
+;RR1 script
+;----------
 
-;$*XButton1::
-;if (GetKeyState("LShift", "P")) {  
-;    SendInput, {RButton Down}
-;    Sleep, 50
-;   SendInput, {Blind}{LShift Up} 
-;    Sleep, 5  
-;    SendInput, {LButton Down}
-;    Sleep, 50 
-;    SendInput, {LButton Up}
-;    Sleep, 10  
-;    SendInput, {RButton Up}
-;    Sleep 10
-;}
-;Return
+$*XButton1::
+if (GetKeyState("LShift", "P")) {  
+   SendInput, {Blind}{LShift Up}   
+    SendInput, {LButton Down}
+    Sleep, 10 
+    SendInput, {LButton Up}
+    if (GetKeyState("LShift", "P")) {
+        SendInput, {Blind}{LShift Down}
+    }
+}
+Return
 
 ;---------
 ;Debugging
@@ -97,3 +94,4 @@ MsgBox, Menu State: %menuOpen%
 Return
 
 #IfWinActive
+
